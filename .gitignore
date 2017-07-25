@@ -1,0 +1,5 @@
+gitlab/gitlab-files/*
+bamboo/*
+postfixadmin/*
+mail/*
+jenkins/jenkins_home/*

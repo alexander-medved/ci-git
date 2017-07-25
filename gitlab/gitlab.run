@@ -1,0 +1,7 @@
+docker run -d -h git.playtagon.com \
+-p 3443:443 -p 8080:80 -p 2222:22 \
+--name gitlab --restart always \
+-v /root/compose/gitlab/gitlab-files/config:/etc/gitlab \
+-v /root/compose/gitlab/gitlab-files/logs:/var/log/gitlab \
+-v /root/compose/gitlab/gitlab-files/data:/var/opt/gitlab \
+gitlab/gitlab-ce:latest

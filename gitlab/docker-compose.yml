@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  git.playtagon.com:
+   container_name: git
+   hostname: 'git.playtagon.com'
+   image: gitlab/gitlab-ce:latest
+   ports:
+    - "3443:443"
+    - "8080:80"
+    - "2222:22"
+   restart: always
+
+   volumes:
+    - ./../gitlab/gitlab-files/config:/etc/gitlab
+    - ./../gitlab/gitlab-files/logs/:/var/log/gitlab/
+    - ./../gitlab/gitlab-files/data/:/var/opt/gitlab/
+    - ./../gitlab/gitlab-files/logs/reconfigure/:/var/log/gitlab/reconfigure/
+    - ./../gitlab/gitlab-files/home/git:/home/git
+    - ./../gitlab/gitlab-files/backups:/var/opt/gitlab/backups

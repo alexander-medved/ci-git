@@ -1,0 +1,11 @@
+jenkins:
+  image: jenkinsci/jenkins:lts
+  container_name: jenkins
+  domainname: playtagon.com
+  hostname: jenkins
+  ports:
+    - "49001:8080"
+    - "50000:50000"
+  restart: always
+  volumes:
+    - /root/compose/jenkins/jenkins_home:/var/jenkins_home
